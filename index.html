@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Omni Demand Understanding: a benchmark for situated user-intent inference in multimodal interaction. Explore the paper's examples and human recordings.">
+  <title>Omni Demand Understanding</title>
+  <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/noto-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="project.js" defer></script>
+  <script src="scenes.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+  <main id="main">
+    <div id="gallery-view">
+      <header class="publication-header">
+        <h1 id="publication-title">Omni Demand Understanding</h1>
+        <p class="publication-subtitle" id="publication-subtitle">A Benchmark for Situated User-Intent Inference in Multimodal Interaction</p>
+        <div class="publication-links"><a class="resource-link" href="#teaser-demos">Explore examples</a></div>
+        <nav class="page-nav" aria-label="Page sections"><a href="#abstract">Abstract</a><a href="#teaser-demos">Paper examples</a><a href="#recorded-demos">Human recordings <span id="header-recorded-count"></span></a><a href="#more-demos">More demos <span id="header-more-count"></span></a><a href="#ethics-statement">Ethics</a></nav>
+      </header>
+
+      <section id="abstract" class="paper-section abstract" aria-labelledby="abstract-heading">
+        <h2 id="abstract-heading">Abstract</h2>
+        <div id="abstract-copy" class="paper-copy"></div>
+        <p class="benchmark-facts"><span><strong id="benchmark-scene-count">2,078</strong> scenes</span><span><strong id="benchmark-recorded-count">277</strong> human recordings</span><span>English &amp; Mandarin</span><span>Audio &amp; audio-visual</span></p>
+      </section>
+
+      <section id="teaser-demos" class="paper-section" aria-labelledby="teaser-heading">
+        <h2 id="teaser-heading" tabindex="-1">Examples from the Paper</h2>
+        <p class="section-intro"><span id="teaser-count"></span> from the teaser, spanning four taxonomy axes and No demand.</p>
+        <div id="teaser-categories" class="category-tabs" role="group" aria-label="Teaser taxonomy categories"></div>
+        <div id="teaser-example" class="teaser-example"></div>
+        <div class="carousel-navigation"><button id="teaser-previous" class="carousel-arrow" aria-label="Previous teaser example">←</button><span id="teaser-position" aria-live="polite"></span><button id="teaser-next" class="carousel-arrow" aria-label="Next teaser example">→</button></div>
+      </section>
+
+      <section id="recorded-demos" class="paper-section" aria-labelledby="recorded-heading">
+        <h2 id="recorded-heading" tabindex="-1">Human-recorded Demos</h2>
+        <p class="section-intro"><span id="recorded-total"></span> with reviewed benchmark annotations.<br><span id="recorded-language"></span></p>
+        <aside class="recorded-consent" aria-label="Actor consent"><p><strong>Actor consent.</strong> All participating actors have provided <strong>informed consent for public display and benchmark evaluation</strong> of their recordings, including their faces and voices. See the <a href="#ethics-statement">Ethics Statement</a> in our paper for details.</p></aside>
+        <div id="recorded-controls" hidden><details class="filter-panel"><summary>Filter recordings</summary><div class="filter-fields"><label>Taxonomy axis<select id="recorded-category"></select></label><label id="recorded-taxonomy-filter" hidden>Subtype<select id="recorded-subtype"><option value="all">All subtypes</option></select></label><label class="search-field">Search<input id="recorded-search" type="search" placeholder="Title, transcript or scene ID"></label><button id="reset-recorded" class="text-button">Reset</button></div></details></div>
+        <p id="recorded-result-count" class="result-count" aria-live="polite"></p>
+        <div id="recorded-grid" class="example-list"></div>
+        <div id="recorded-empty" class="empty-state" hidden><p>No recordings match these filters.</p><button id="recorded-empty-reset" class="text-button">Reset filters</button></div>
+        <div class="collection-action"><button id="toggle-recorded" class="outline-button" aria-expanded="false" aria-controls="recorded-controls recorded-grid">Show all recordings</button></div>
+      </section>
+
+      <section id="more-demos" class="paper-section" aria-labelledby="more-heading">
+        <h2 id="more-heading" tabindex="-1">More Demos</h2>
+        <p class="section-intro"><span id="more-total"></span>, including audio-only interactions and Mandarin examples.</p>
+        <div id="more-content" hidden>
+          <details class="filter-panel"><summary>Filter examples</summary><div class="filter-fields"><label>Taxonomy axis<select id="category"></select></label><label id="taxonomy-filter" hidden>Subtype<select id="taxonomy-subtype"><option value="all">All subtypes</option></select></label><label>Media language<select id="media-language"><option value="en">English</option><option value="all">All languages</option><option value="zh">Mandarin</option></select></label><label>Media type<select id="modality"><option value="all">All media</option><option value="audio-visual">Video + audio</option><option value="audio-only">Audio only</option></select></label><label class="search-field">Search<input id="search" type="search" placeholder="Title, transcript or scene ID"></label><button id="reset-filters" class="text-button">Reset</button></div></details>
+          <p id="result-count" class="result-count" aria-live="polite"></p>
+          <div id="scene-grid" class="example-list"></div>
+          <div id="empty-state" class="empty-state" hidden><p>No examples match these filters.</p><button id="empty-reset" class="text-button">Reset filters</button></div>
+        </div>
+        <div class="collection-action"><button id="toggle-more" class="outline-button" aria-expanded="false" aria-controls="more-content">Show more demos</button></div>
+      </section>
+
+      <section id="ethics-statement" class="paper-section" aria-labelledby="ethics-heading"><h2 id="ethics-heading" tabindex="-1">Ethics Statement</h2><div id="ethics-copy" class="paper-copy"></div></section>
+    </div>
+    <article id="detail-view" hidden aria-labelledby="scene-title">
+      <div class="detail-navigation"><a href="#" id="back-to-gallery">← All examples</a><span id="scene-position"></span><div><button id="previous-scene" class="nav-button">← Previous</button><button id="next-scene" class="nav-button">Next →</button></div></div>
+      <div class="detail-heading"><div><p class="eyebrow" id="detail-category"></p><h1 id="scene-title" tabindex="-1"></h1><p id="scene-summary"></p></div><div class="detail-tools"><label for="annotation-language">Annotation language</label><select id="annotation-language"><option value="en">English</option><option value="zh">中文</option></select></div></div>
+      <div id="detail-badges" class="detail-badges"></div>
+      <div class="detail-columns">
+        <section class="interaction" aria-labelledby="interaction-heading">
+          <div class="section-heading"><h2 id="interaction-heading">The interaction</h2><span id="media-caption"></span></div>
+          <div id="media-stage" class="media-stage"></div>
+          <div class="mobile-jump"><a href="#understanding-heading" id="jump-to-annotation">Read the reference annotation ↓</a></div>
+          <div id="demand-timeline" class="demand-timeline"></div>
+          <div class="sequence-heading"><h3>Conversation sequence</h3><button id="start-context" class="text-button">Start with context ↗</button></div>
+          <div id="turn-sequence" class="turn-sequence"></div>
+          <div id="reply-panel" class="reply-panel"></div>
+          <p class="input-note">Only the final user turn is evaluated. Earlier assistant replies are text supplied as conversation context.</p>
+        </section>
+        <section class="understanding" aria-labelledby="understanding-heading">
+          <div class="section-heading"><h2 id="understanding-heading" tabindex="-1">The reference annotation</h2><span id="annotation-scope"></span></div>
+          <div id="annotation-tabs" class="annotation-tabs" role="tablist" aria-label="Annotation view"><button id="tab-story" role="tab" aria-controls="annotation-content" aria-selected="true" data-tab="story">At a glance</button><button id="tab-keypoints" role="tab" aria-controls="annotation-content" aria-selected="false" data-tab="keypoints">Key points</button><button id="tab-fields" role="tab" aria-controls="annotation-content" aria-selected="false" data-tab="fields">All fields</button></div>
+          <div id="span-selector" class="span-selector"></div>
+          <div id="annotation-content" role="tabpanel" aria-labelledby="tab-story" tabindex="0"></div>
+          <details class="taxonomy-details"><summary>Scene taxonomy <span>6 construction axes</span></summary><dl id="taxonomy-fields"></dl><p>Scene taxonomy describes construction coverage. Evidence labels describe the source of information for each annotation.</p></details>
+        </section>
+      </div>
+    </article>
+  </main>
+  <footer><p>ODU-Bench · Omni Demand Understanding</p></footer>
+  <div id="status" class="sr-only" role="status" aria-live="polite"></div>
+  <noscript>Enable JavaScript to explore the interactive examples.</noscript>
+</body>
+</html>
